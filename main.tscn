@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvado62adjlux"]
+[gd_scene load_steps=7 format=3 uid="uid://dvado62adjlux"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rbtj1"]
+[ext_resource type="Theme" uid="uid://c2pam037itskx" path="res://theme.tres" id="2_tt0nx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kar10"]
 size = Vector2(1077.5, 96)
@@ -88,3 +89,26 @@ metadata/_edit_lock_ = true
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-1, 28)
 curve = SubResource("Curve2D_gg87h")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 24.0
+offset_right = 1008.0
+offset_bottom = 104.0
+theme = ExtResource("2_tt0nx")
+
+[node name="Label" type="Label" parent="Menu/HBoxContainer"]
+layout_mode = 2
+text = "Points: "
+
+[node name="ScoreDisplay" type="Label" parent="Menu/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"

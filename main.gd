@@ -1,6 +1,8 @@
 extends Node
 
 var spawn_longitude: int = 0
+var score: int = 0
+@onready var score_display: Label = %ScoreDisplay
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +23,10 @@ func _input(event):
 func _choose_droppable() -> Droppable:
 	return Globals.DROPPABLE_DATA[Globals.Droppables.DEBUG1]
 
+func _add_to_score(points: int):
+	score += points
+	score_display.text = str(score)
+
 func _upgrade(droppable: Droppable, prev_left: Vector2, prev_right: Vector2):
 	var normalized_x = (prev_left.x + prev_right.x) / 2
 	var normalized_y = (prev_left.y + prev_right.y) / 2
@@ -28,8 +34,7 @@ func _upgrade(droppable: Droppable, prev_left: Vector2, prev_right: Vector2):
 	new_suika.drop_new.connect(_upgrade)
 	add_child(new_suika)
 	new_suika.position = Vector2(normalized_x, normalized_y)
-	
-
+	_add_to_score(droppable.combine_points)
 
 func _spawn_droppable(droppable: Droppable):
 	# var new_suika = droppable.scene.instantiate()
@@ -37,3 +42,4 @@ func _spawn_droppable(droppable: Droppable):
 	new_suika.drop_new.connect(_upgrade)
 	add_child(new_suika)
 	new_suika.position.x = spawn_longitude
+	_add_to_score(droppable.combine_points)
