@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=2 format=3 uid="uid://rtjahk0bpxxx"]
+
+[ext_resource type="Script" path="res://data/droppable.gd" id="1_honvb"]
+
+[resource]
+script = ExtResource("1_honvb")
+spawn_rate = 1
+name = ""
+combine_points = 0
