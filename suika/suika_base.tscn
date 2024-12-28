@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxe6qbd8ucu"]
+
+[ext_resource type="Script" path="res://suika/suika_base.gd" id="1_fdu73"]
+
+[node name="SuikaBase" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_fdu73")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
