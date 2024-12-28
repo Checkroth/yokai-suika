@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://cea2olws3k4gb"]
+
+[ext_resource type="Resource" uid="uid://4l46lm0c4e53" path="res://data/DebugData/DebugSphere6.tres" id="1_vi43v"]
+[ext_resource type="PackedScene" uid="uid://cy13ywy4nmb7q" path="res://suika/DebugSphere.tscn" id="2_oqcpq"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="3_qxc5i"]
+
+[resource]
+script = ExtResource("3_qxc5i")
+spawn_rate = 10
+name = "Debug Sphere5"
+scene = ExtResource("2_oqcpq")
+combine_points = 1
+next_droppable = ExtResource("1_vi43v")
+scale = 1.25

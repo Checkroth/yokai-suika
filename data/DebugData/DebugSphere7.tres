@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://vil7d1n1rfe0"]
+
+[ext_resource type="Resource" uid="uid://cd5xu861gtmba" path="res://data/MedamaOyaji.tres" id="1_ydpwl"]
+[ext_resource type="PackedScene" uid="uid://cy13ywy4nmb7q" path="res://suika/DebugSphere.tscn" id="2_28mc2"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="3_4dc6o"]
+
+[resource]
+script = ExtResource("3_4dc6o")
+spawn_rate = 10
+name = "Debug Sphere7"
+scene = ExtResource("2_28mc2")
+combine_points = 1
+next_droppable = ExtResource("1_ydpwl")
+scale = 1.75
