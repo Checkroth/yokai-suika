@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1oqaeujf6hdm"]
+
+[ext_resource type="Script" path="res://suika/suika_base.gd" id="1_pfgol"]
+[ext_resource type="Texture2D" uid="uid://dpx13vv5p54jn" path="res://assets/14_kaju.png" id="2_82wvm"]
+
+[node name="Yokai" type="RigidBody2D" node_paths=PackedStringArray("collision_space", "sprite")]
+script = ExtResource("1_pfgol")
+collision_space = NodePath("CollisionPolygon2D")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_82wvm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(-337, 160, -361, 160, -345, 192, -393, 176, -376.999, 192, -376.999, 232, -400.999, 248, -392.999, 216, -417, 152, -489, 16.0004, -417, 72.0002, -377, 72, -449, 0.0003, -489, -64, -465, -64, -369, 0, -457, -104, -449, -112, -385, -96, -385.001, -120, -465.001, -240, -345.001, -240, -241.001, -192, -177.001, -216.001, -65.001, -224.001, -49.001, -296.001, -25.001, -296.001, -9.001, -280.001, -17.001, -232.001, 46.999, -240.001, 118.999, -208.002, 246.999, -160.002, 335, -96.003, 391, -40.0027, 391, -8.0028, 415, -24.0028, 487, 23.9969, 479, 39.9969, 487, 55.9969, 463, 79.997, 487, 111.997, 439, 71.9971, 407, 63.9972, 399, 119.997, 383, 159.997, 423, 167.997, 495.001, 191.997, 447.001, 247.997, 431.001, 255.997, 407.001, 199.997, 343.001, 231.997, 319.001, 255.998, 247.001, 287.998, 191.001, 295.998, 103.001, 303.998, 23.001, 303.999, 23.001, 367.999, -32.999, 375.999, -72.999, 351.999, -104.999, 335.999, -96.999, 271.999, -184.999, 255.999, -304.999, 208)

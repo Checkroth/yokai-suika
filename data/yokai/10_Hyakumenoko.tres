@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://da1ab0eycy8kb"]
+
+[ext_resource type="PackedScene" uid="uid://2mpeqgon1db2" path="res://suika/yokai/10_Hyakumenoko.tscn" id="1_4d1ov"]
+[ext_resource type="Resource" uid="uid://b1o5qh5q2ji02" path="res://data/yokai/11_Hyakume.tres" id="1_48tlt"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_t6gsr"]
+
+[resource]
+script = ExtResource("2_t6gsr")
+spawn_rate = 0
+name = "Hyakumenoko"
+scene = ExtResource("1_4d1ov")
+combine_points = 512
+next_droppable = ExtResource("1_48tlt")
+scale = 1.0

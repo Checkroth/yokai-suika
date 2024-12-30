@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b83wgidq7f3ao"]
+
+[ext_resource type="Script" path="res://suika/suika_base.gd" id="1_vmt22"]
+[ext_resource type="Texture2D" uid="uid://cvqjky7ts8v2b" path="res://assets/1_medamaoyaji.png" id="2_ekaja"]
+
+[node name="MedamaOyaji" type="RigidBody2D" node_paths=PackedStringArray("collision_space", "sprite")]
+script = ExtResource("1_vmt22")
+collision_space = NodePath("CollisionPolygon2D")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ekaja")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(-481, 0, -473, -64, -425, -168, -329, -288, -249, -344, -137, -368, 31, -360, 175, -328, 271, -280, 319, -240, 375, -160, 423, -64, 463, 96, 351, 328, 255, 384, 183, 408, 71, 416, -57, 376, -265, 264, -417, 112, -481, 0, -481, 8)

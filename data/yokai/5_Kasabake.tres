@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://by22aomyeotos"]
+
+[ext_resource type="Resource" uid="uid://swq565blwe53" path="res://data/yokai/6_Oni.tres" id="1_nfnb5"]
+[ext_resource type="PackedScene" uid="uid://c0kjws2yunrwj" path="res://suika/yokai/5_Kasabake.tscn" id="1_qrdv2"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_858oq"]
+
+[resource]
+script = ExtResource("2_858oq")
+spawn_rate = 1
+name = "Kasabake"
+scene = ExtResource("1_qrdv2")
+combine_points = 16
+next_droppable = ExtResource("1_nfnb5")
+scale = 0.5

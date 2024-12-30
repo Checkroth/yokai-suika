@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=3 format=3 uid="uid://dyymk6fou1egu"]
+
+[ext_resource type="PackedScene" uid="uid://cukn6f36x8ryb" path="res://suika/yokai/18_Kitaro.tscn" id="1_hsj7k"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_yqhxb"]
+
+[resource]
+script = ExtResource("2_yqhxb")
+spawn_rate = 0
+name = "GeGeGe no Kitaro"
+scene = ExtResource("1_hsj7k")
+combine_points = 131072
+scale = 1.8

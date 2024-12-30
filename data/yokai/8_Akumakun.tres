@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://jkag7g3ttk7b"]
+
+[ext_resource type="PackedScene" uid="uid://dtr83rsdvbjdb" path="res://suika/yokai/8_Akumakun.tscn" id="1_55xub"]
+[ext_resource type="Resource" uid="uid://65ebvvi1lpux" path="res://data/yokai/9_Mephisto.tres" id="1_abo1o"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_s1c32"]
+
+[resource]
+script = ExtResource("2_s1c32")
+spawn_rate = 0
+name = "Akumakun"
+scene = ExtResource("1_55xub")
+combine_points = 128
+next_droppable = ExtResource("1_abo1o")
+scale = 0.8

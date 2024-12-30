@@ -1,6 +1,6 @@
 class_name SuikaBase extends RigidBody2D
 
-@export var collision_space: CollisionShape2D
+@export var collision_space: CollisionPolygon2D
 @export var sprite: Sprite2D
 
 var droppable: Droppable
@@ -20,7 +20,6 @@ func configure(target_droppable: Droppable):
 	droppable = target_droppable
 	collision_space.scale = Vector2(droppable.scale, droppable.scale)
 	sprite.scale = Vector2(droppable.scale, droppable.scale)
-
 func freeze():
 	# Used for preparing an object to drop at the top, but allowing it to
 	#    visibly slide along the top until the player is ready to drop it.

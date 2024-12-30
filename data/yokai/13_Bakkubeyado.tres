@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://sp3a6urnydnb"]
+
+[ext_resource type="Resource" uid="uid://codaba1byyrxa" path="res://data/yokai/14_Kaju.tres" id="1_en8gm"]
+[ext_resource type="PackedScene" uid="uid://cl3cqytue2jql" path="res://suika/yokai/13_Bakkubeyado.tscn" id="1_n05nb"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_l23it"]
+
+[resource]
+script = ExtResource("2_l23it")
+spawn_rate = 0
+name = "Bakkubeyado"
+scene = ExtResource("1_n05nb")
+combine_points = 4096
+next_droppable = ExtResource("1_en8gm")
+scale = 1.3

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://c3i657gjpv25k"]
+
+[ext_resource type="PackedScene" uid="uid://b83wgidq7f3ao" path="res://suika/yokai/1_MedamaOyaji.tscn" id="1_7t7ye"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="1_c3yqx"]
+[ext_resource type="Resource" uid="uid://y6vshopaop5r" path="res://data/yokai/2_Kurabokko.tres" id="1_wxtww"]
+
+[resource]
+script = ExtResource("1_c3yqx")
+spawn_rate = 10
+name = "Medama Oyaji"
+scene = ExtResource("1_7t7ye")
+combine_points = 1
+next_droppable = ExtResource("1_wxtww")
+scale = 0.1

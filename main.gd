@@ -21,7 +21,7 @@ func _input(event):
 		print("CLICKED")
 
 func _choose_droppable() -> Droppable:
-	return Globals.DROPPABLE_DATA[Globals.Droppables.DEBUG1]
+	return Globals.DROPPABLE_DATA[Globals.Droppables.MEDAMA_OYAJI]
 
 func _add_to_score(points: int):
 	score += points

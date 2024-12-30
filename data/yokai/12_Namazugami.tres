@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://dmtpgh76fftjs"]
+
+[ext_resource type="Resource" uid="uid://sp3a6urnydnb" path="res://data/yokai/13_Bakkubeyado.tres" id="1_svn7r"]
+[ext_resource type="PackedScene" uid="uid://bf5nlu8svgmbw" path="res://suika/yokai/12_Namazugami.tscn" id="1_uk2j3"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_ga5qs"]
+
+[resource]
+script = ExtResource("2_ga5qs")
+spawn_rate = 0
+name = "Namazugami"
+scene = ExtResource("1_uk2j3")
+combine_points = 2048
+next_droppable = ExtResource("1_svn7r")
+scale = 1.2

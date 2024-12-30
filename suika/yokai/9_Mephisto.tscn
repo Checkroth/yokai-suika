@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwdm2a50wekg7"]
+
+[ext_resource type="Script" path="res://suika/suika_base.gd" id="1_xjkwu"]
+[ext_resource type="Texture2D" uid="uid://bdp8spbbr0nb" path="res://assets/9_mephisto.png" id="2_uu70g"]
+
+[node name="Yokai" type="RigidBody2D" node_paths=PackedStringArray("collision_space", "sprite")]
+script = ExtResource("1_xjkwu")
+collision_space = NodePath("CollisionPolygon2D")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uu70g")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(-425, 112, -433, 8.0002, -457.001, -296, -385.001, -256, -313.001, -232, -233.001, -208, -153.001, -216.001, -113.002, -472.001, -89.002, -464.001, -81.001, -344.001, -73.001, -168.001, -41.001, -232.001, -17.001, -248.001, 30.999, -256.001, 70.999, -264.002, 158.999, -264.002, 214.999, -240.002, 286.999, -200.002, 358.999, -120.003, 399, -24.0028, 423, 119.997, 439.001, 295.997, 439.001, 383.997, 423.001, 415.997, 335.001, 319.997, 119, 111.998, 47, 55.9985, 23, 55.9986, -17, 55.9987, -113, 103.999, -113, 143.999, -120.999, 247.999, -136.999, 303.999, -184.999, 279.999, -184.999, 239.999, -185, 119.999, -273, 120)

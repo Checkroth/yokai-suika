@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://b86u3m1v2kdde"]
+
+[ext_resource type="PackedScene" uid="uid://ch2ebbbc3h7p2" path="res://suika/yokai/4_Dorotabo.tscn" id="1_gfvv8"]
+[ext_resource type="Resource" uid="uid://by22aomyeotos" path="res://data/yokai/5_Kasabake.tres" id="1_wuabu"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_k1yr0"]
+
+[resource]
+script = ExtResource("2_k1yr0")
+spawn_rate = 1
+name = "Dorotabo"
+scene = ExtResource("1_gfvv8")
+combine_points = 8
+next_droppable = ExtResource("1_wuabu")
+scale = 0.4

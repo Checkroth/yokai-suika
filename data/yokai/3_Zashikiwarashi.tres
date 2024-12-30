@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://cn84abd7aqiph"]
+
+[ext_resource type="PackedScene" uid="uid://ddlqm8vola42n" path="res://suika/yokai/3_Zashikiwarashi.tscn" id="1_jrngf"]
+[ext_resource type="Resource" uid="uid://b86u3m1v2kdde" path="res://data/yokai/4_Dorotabo.tres" id="1_vpyvf"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_o0mor"]
+
+[resource]
+script = ExtResource("2_o0mor")
+spawn_rate = 2
+name = "Zashikiwarashi"
+scene = ExtResource("1_jrngf")
+combine_points = 4
+next_droppable = ExtResource("1_vpyvf")
+scale = 0.3

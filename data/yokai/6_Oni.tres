@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://swq565blwe53"]
+
+[ext_resource type="PackedScene" uid="uid://jskxmc7pjk5w" path="res://suika/yokai/6_Oni.tscn" id="1_4rgup"]
+[ext_resource type="Resource" uid="uid://bq0upl7oharn" path="res://data/yokai/7_Kyubinokitsune.tres" id="1_p1vi1"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_ifhyp"]
+
+[resource]
+script = ExtResource("2_ifhyp")
+spawn_rate = 0
+name = "Oni"
+scene = ExtResource("1_4rgup")
+combine_points = 32
+next_droppable = ExtResource("1_p1vi1")
+scale = 0.6

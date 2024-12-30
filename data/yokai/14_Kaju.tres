@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://codaba1byyrxa"]
+
+[ext_resource type="Resource" uid="uid://cgyqhnsjfmvaw" path="res://data/yokai/15_Nezumiotoko.tres" id="1_1lgng"]
+[ext_resource type="PackedScene" uid="uid://b1oqaeujf6hdm" path="res://suika/yokai/14_Kaju.tscn" id="1_y2m3s"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_m67j2"]
+
+[resource]
+script = ExtResource("2_m67j2")
+spawn_rate = 0
+name = "Kaju"
+scene = ExtResource("1_y2m3s")
+combine_points = 8192
+next_droppable = ExtResource("1_1lgng")
+scale = 1.4

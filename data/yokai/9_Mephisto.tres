@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://65ebvvi1lpux"]
+
+[ext_resource type="PackedScene" uid="uid://dwdm2a50wekg7" path="res://suika/yokai/9_Mephisto.tscn" id="1_t8wxh"]
+[ext_resource type="Resource" uid="uid://da1ab0eycy8kb" path="res://data/yokai/10_Hyakumenoko.tres" id="1_yv4ec"]
+[ext_resource type="Script" path="res://data/droppable.gd" id="2_0mqhq"]
+
+[resource]
+script = ExtResource("2_0mqhq")
+spawn_rate = 0
+name = "Mephisto"
+scene = ExtResource("1_t8wxh")
+combine_points = 256
+next_droppable = ExtResource("1_yv4ec")
+scale = 0.9
