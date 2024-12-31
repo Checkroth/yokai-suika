@@ -34,6 +34,10 @@ spawn={
 ]
 }
 
+[physics]
+
+2d/default_gravity=3000.0
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

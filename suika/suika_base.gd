@@ -15,7 +15,7 @@ var fusing_deferred = false
 func _ready():
 	body_entered.connect(_on_body_entered)
 	contact_monitor = true
-	max_contacts_reported = 1
+	max_contacts_reported = 100
 	
 func configure(target_droppable: Droppable):
 	droppable = target_droppable
