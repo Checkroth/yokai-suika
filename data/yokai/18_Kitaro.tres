@@ -9,4 +9,4 @@ spawn_rate = 0
 name = "GeGeGe no Kitaro"
 scene = ExtResource("1_hsj7k")
 combine_points = 131072
-scale = 1.8
+scale = 0.95

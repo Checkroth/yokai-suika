@@ -11,4 +11,4 @@ name = "Namazugami"
 scene = ExtResource("1_uk2j3")
 combine_points = 2048
 next_droppable = ExtResource("1_svn7r")
-scale = 1.2
+scale = 0.65

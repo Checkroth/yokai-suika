@@ -11,4 +11,4 @@ name = "Hyakume"
 scene = ExtResource("1_byegk")
 combine_points = 1024
 next_droppable = ExtResource("1_tyrw8")
-scale = 1.1
+scale = 0.6

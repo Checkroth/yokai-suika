@@ -11,4 +11,4 @@ name = "Nezumiotoko"
 scene = ExtResource("1_bhcop")
 combine_points = 16384
 next_droppable = ExtResource("1_slira")
-scale = 1.5
+scale = 0.8

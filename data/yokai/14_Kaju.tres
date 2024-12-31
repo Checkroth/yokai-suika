@@ -11,4 +11,4 @@ name = "Kaju"
 scene = ExtResource("1_y2m3s")
 combine_points = 8192
 next_droppable = ExtResource("1_1lgng")
-scale = 1.4
+scale = 0.75

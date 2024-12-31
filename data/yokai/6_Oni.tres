@@ -11,4 +11,4 @@ name = "Oni"
 scene = ExtResource("1_4rgup")
 combine_points = 32
 next_droppable = ExtResource("1_p1vi1")
-scale = 0.6
+scale = 0.35

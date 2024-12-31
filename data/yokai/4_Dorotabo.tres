@@ -11,4 +11,4 @@ name = "Dorotabo"
 scene = ExtResource("1_gfvv8")
 combine_points = 8
 next_droppable = ExtResource("1_wuabu")
-scale = 0.4
+scale = 0.25

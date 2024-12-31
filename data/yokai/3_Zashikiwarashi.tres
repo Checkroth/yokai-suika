@@ -11,4 +11,4 @@ name = "Zashikiwarashi"
 scene = ExtResource("1_jrngf")
 combine_points = 4
 next_droppable = ExtResource("1_vpyvf")
-scale = 0.3
+scale = 0.2

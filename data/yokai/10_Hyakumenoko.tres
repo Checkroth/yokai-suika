@@ -11,4 +11,4 @@ name = "Hyakumenoko"
 scene = ExtResource("1_4d1ov")
 combine_points = 512
 next_droppable = ExtResource("1_48tlt")
-scale = 1.0
+scale = 0.55

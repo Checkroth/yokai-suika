@@ -11,4 +11,4 @@ name = "Kasabake"
 scene = ExtResource("1_qrdv2")
 combine_points = 16
 next_droppable = ExtResource("1_nfnb5")
-scale = 0.5
+scale = 0.3

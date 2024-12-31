@@ -11,4 +11,4 @@ name = "Kurabokko"
 scene = ExtResource("1_ahflv")
 combine_points = 2
 next_droppable = ExtResource("1_25n88")
-scale = 0.2
+scale = 0.15

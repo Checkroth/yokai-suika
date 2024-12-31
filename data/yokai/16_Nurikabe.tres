@@ -11,4 +11,4 @@ name = "Nurikabe"
 scene = ExtResource("1_bayri")
 combine_points = 32768
 next_droppable = ExtResource("1_j6gdn")
-scale = 1.6
+scale = 0.85

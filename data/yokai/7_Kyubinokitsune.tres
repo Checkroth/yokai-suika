@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="Droppable" load_steps=4 format=3 uid="uid://bq0upl7oharn"]
 
 [ext_resource type="Resource" uid="uid://jkag7g3ttk7b" path="res://data/yokai/8_Akumakun.tres" id="1_a8hw7"]
-[ext_resource type="PackedScene" uid="uid://qyiym8nktuul" path="res://suika/yokai/7_KyubinoKitsune.tscn" id="1_hx56n"]
 [ext_resource type="Script" path="res://data/droppable.gd" id="2_35wwc"]
+[ext_resource type="PackedScene" uid="uid://dtr83rsdvbjdb" path="res://suika/yokai/7_KyubinoKitsune.tscn" id="2_si52t"]
 
 [resource]
 script = ExtResource("2_35wwc")
 spawn_rate = 1
 name = "Kyubinokitsune"
-scene = ExtResource("1_hx56n")
+scene = ExtResource("2_si52t")
 combine_points = 64
 next_droppable = ExtResource("1_a8hw7")
-scale = 0.7
+scale = 0.4

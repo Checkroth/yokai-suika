@@ -11,4 +11,4 @@ name = "Ittanmomen"
 scene = ExtResource("1_5qkdy")
 combine_points = 65536
 next_droppable = ExtResource("1_fb2bd")
-scale = 1.7
+scale = 0.9

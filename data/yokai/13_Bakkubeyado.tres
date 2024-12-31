@@ -11,4 +11,4 @@ name = "Bakkubeyado"
 scene = ExtResource("1_n05nb")
 combine_points = 4096
 next_droppable = ExtResource("1_en8gm")
-scale = 1.3
+scale = 0.7

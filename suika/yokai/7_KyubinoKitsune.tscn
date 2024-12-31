@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://qyiym8nktuul"]
+[gd_scene load_steps=3 format=3 uid="uid://dtr83rsdvbjdb"]
 
-[ext_resource type="Script" path="res://suika/suika_base.gd" id="1_8wiwn"]
-[ext_resource type="Texture2D" uid="uid://bpyfbj5lq8d7k" path="res://assets/8_akumakun.png" id="2_qspkl"]
+[ext_resource type="Script" path="res://suika/suika_base.gd" id="1_dihmj"]
+[ext_resource type="Texture2D" uid="uid://dx80lqkg0ymao" path="res://assets/7_kyubinokitsune.png" id="2_sxd45"]
 
 [node name="Yokai" type="RigidBody2D" node_paths=PackedStringArray("collision_space", "sprite")]
-script = ExtResource("1_8wiwn")
+script = ExtResource("1_dihmj")
 collision_space = NodePath("CollisionPolygon2D")
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qspkl")
+texture = ExtResource("2_sxd45")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 rotation = 1.5708
-polygon = PackedVector2Array(-312.999, 240, -369, 120, -433, -112, -433.001, -208, -393.001, -304, -329.002, -384, -257.002, -456, -209.002, -488.001, -169.002, -496.001, -97.002, -480.001, -57.002, -448.001, -25.001, -360.001, 14.998, -384.001, 62.998, -384.002, 118.999, -352.002, 206.999, -288.002, 286.999, -208.002, 342.999, -160.003, 407, -88.003, 439, -32.0029, 455, 39.997, 455, 111.997, 439.001, 191.997, 399.001, 295.997, 351.001, 351.997, 287.001, 383.998, 223.001, 391.998, 119.001, 359.998, 15.001, 311.999, -112.999, 311.999, -96.999, 367.999, -64.999, 431.999, -56.998, 471.999, -96.999, 407.999, -168.999, 383.999, -224.999, 343.999, -280.999, 288)
+polygon = PackedVector2Array(-320.999, 280, -408.999, 224, -489, 136, -449, 104, -345, 7.9999, -473.001, -120, -345.001, -296, -321.001, -288, -321.001, -272, -297.001, -280, -273.001, -312, -209.001, -368.001, -81.002, -408.001, 6.998, -424.001, 94.998, -408.002, 158.998, -376.002, 222.999, -336.002, 294.999, -288.002, 350.999, -240.003, 374.999, -216.003, 414.999, -144.003, 455, -64.003, 471, 7.997, 471, 79.997, 455, 143.997, 423.001, 199.997, 383.001, 239.997, 343.001, 271.997, 287.001, 311.998, 223.001, 335.998, 143.001, 359.998, 39.001, 367.999, -40.999, 367.999, -144.999, 351.999, -232.999, 320, -320.999, 288)

@@ -11,4 +11,4 @@ name = "Mephisto"
 scene = ExtResource("1_t8wxh")
 combine_points = 256
 next_droppable = ExtResource("1_yv4ec")
-scale = 0.9
+scale = 0.5
