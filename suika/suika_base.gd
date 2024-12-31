@@ -4,6 +4,7 @@ class_name SuikaBase extends RigidBody2D
 @export var sprite: Sprite2D
 
 var droppable: Droppable
+var in_play_collision_layer = 1
 
 signal drop_new
 
@@ -20,13 +21,22 @@ func configure(target_droppable: Droppable):
 	droppable = target_droppable
 	collision_space.scale = Vector2(droppable.scale, droppable.scale)
 	sprite.scale = Vector2(droppable.scale, droppable.scale)
-func freeze():
+
+func _toggle_collision(value: bool):
+	set_collision_layer_value(in_play_collision_layer, value)
+	set_collision_mask_value(in_play_collision_layer, value)
+
+func freeze_body():
 	# Used for preparing an object to drop at the top, but allowing it to
 	#    visibly slide along the top until the player is ready to drop it.
-	pass
+	freeze = true
+	lock_rotation = true
+	_toggle_collision(false)
 
-func unfreeze():
-	pass
+func unfreeze_body():
+	freeze = false
+	lock_rotation = false
+	_toggle_collision(true)
 
 func _on_body_entered(body):
 	# Defer fusing so that multiple bodies don't try to process simultaneously
