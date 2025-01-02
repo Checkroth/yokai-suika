@@ -5,6 +5,7 @@ class_name SuikaBase extends RigidBody2D
 
 var droppable: Droppable
 var in_play_collision_layer = 1
+var game_over_collision_layer = 2
 
 signal drop_new
 
@@ -25,6 +26,8 @@ func configure(target_droppable: Droppable):
 func _toggle_collision(value: bool):
 	set_collision_layer_value(in_play_collision_layer, value)
 	set_collision_mask_value(in_play_collision_layer, value)
+	set_collision_layer_value(game_over_collision_layer, value)
+	set_collision_mask_value(game_over_collision_layer, value)
 
 func freeze_body():
 	# Used for preparing an object to drop at the top, but allowing it to

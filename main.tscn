@@ -12,11 +12,8 @@ size = Vector2(64, 1824)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajo2m"]
 size = Vector2(56, 1824)
 
-[sub_resource type="Curve2D" id="Curve2D_gg87h"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 73, 156, 0, 0, 0, 0, 1017, 156)
-}
-point_count = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypnkk"]
+size = Vector2(1344, 1312)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_rbtj1")
@@ -87,17 +84,52 @@ position = Vector2(985, 774)
 shape = SubResource("RectangleShape2D_ajo2m")
 metadata/_edit_lock_ = true
 
-[node name="Path2D" type="Path2D" parent="."]
-position = Vector2(-1, 28)
-curve = SubResource("Curve2D_gg87h")
+[node name="GameOverDetector" type="Area2D" parent="GameArea"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
 
-[node name="Menu" type="Control" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/GameOverDetector"]
+position = Vector2(477, -608)
+shape = SubResource("RectangleShape2D_ypnkk")
+
+[node name="Game Over Line" type="ColorRect" parent="GameArea"]
+layout_mode = 0
+offset_left = -67.0
+offset_top = 40.0
+offset_right = 1013.0
+offset_bottom = 48.0
+color = Color(1, 0.07, 0.07, 1)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="GameOverTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 3.0
+
+[node name="GameMessages" type="CanvasLayer" parent="."]
+
+[node name="Game Over" type="Label" parent="GameMessages"]
+unique_name_in_owner = true
+visible = false
+offset_left = 256.0
+offset_top = 704.0
+offset_right = 829.0
+offset_bottom = 841.0
+size_flags_horizontal = 4
+theme = ExtResource("2_tt0nx")
+theme_type_variation = &"LargeMenu"
+text = "GAME OVER"
+
+[node name="Menu" type="Control" parent="GameMessages"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GameMessages/Menu"]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 24.0
@@ -105,17 +137,16 @@ offset_right = 1008.0
 offset_bottom = 104.0
 theme = ExtResource("2_tt0nx")
 
-[node name="Label" type="Label" parent="Menu/HBoxContainer"]
+[node name="Label" type="Label" parent="GameMessages/Menu/HBoxContainer"]
 layout_mode = 2
 text = "Points: "
 
-[node name="ScoreDisplay" type="Label" parent="Menu/HBoxContainer"]
+[node name="ScoreDisplay" type="Label" parent="GameMessages/Menu/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 
-[node name="SpawnTimer" type="Timer" parent="."]
-unique_name_in_owner = true
-one_shot = true
-
+[connection signal="body_entered" from="GameArea/GameOverDetector" to="." method="_game_over_area_entered"]
+[connection signal="body_exited" from="GameArea/GameOverDetector" to="." method="_game_over_area_exited"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_spawn_droppable"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_game_over"]

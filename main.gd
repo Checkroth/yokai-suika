@@ -6,7 +6,18 @@ var hanging_suika: SuikaBase
 @onready var score_display: Label = %ScoreDisplay
 @onready var game_area: Control = %GameArea
 @onready var spawn_timer: Timer = %SpawnTimer
+@onready var game_over_timer: Timer = %GameOverTimer
+@onready var game_over_area: Area2D = %GameOverDetector
+@onready var game_over_label: Label = %"Game Over"
 var spawn_wait_time_seconds: float = 1.0
+@export var game_over_wait_time: float = 5.0
+
+enum GAME_STATE {
+	RUNNING, FAILED
+}
+var game_state = GAME_STATE.RUNNING
+
+
 
 # Attributes of game_area, used for clamping. Set on ready
 var min_x: float
@@ -33,12 +44,17 @@ func clamp_x(clamp_target: float):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if game_state == GAME_STATE.FAILED:
+		# Cancel all further input
+		return
 	var mouse_position = game_area.get_global_mouse_position()
 	spawn_longitude = clamp_x(mouse_position.x)
 	if hanging_suika != null:
 		hanging_suika.position.x = spawn_longitude
 
 func _input(event):
+	if game_state == GAME_STATE.FAILED:
+		return
 	if event is InputEventMouseButton and !event.is_pressed():
 		spawn_longitude = event.position.x
 		call_deferred("_drop_droppable")
@@ -76,3 +92,22 @@ func _drop_droppable():
 	hanging_suika.unfreeze_body()
 	hanging_suika = null
 	spawn_timer.start(spawn_wait_time_seconds)
+
+
+func _game_over_area_entered(_body):
+	# If a suika is in the game over area, we start the game over timer.
+	# If the physics engine doesn't get the item out of the game over area in time,
+	#    the player loses the game.
+	if game_over_timer.is_stopped():
+		game_over_timer.start(game_over_wait_time)
+
+func _game_over_area_exited(_body):
+	# When a suika leaves the game over area, check if we have any other suika in the area.
+	# If we don't, cancel the timer as the physics engine has cleared the area and the player
+	#    should not be in a "game over" state anymore.
+	if !game_over_area.has_overlapping_bodies():
+		game_over_timer.stop()
+
+func _game_over():
+	game_over_label.show()
+	spawn_timer.stop()
