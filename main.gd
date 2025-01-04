@@ -12,6 +12,10 @@ var hanging_suika: SuikaBase
 var spawn_wait_time_seconds: float = 1.0
 @export var game_over_wait_time: float = 5.0
 
+var rng = RandomNumberGenerator.new()
+var drop_select_list: Array[Droppable] = []
+var encountered_list: Dictionary = {Globals.DROPPABLE_DATA[Globals.Droppables.MEDAMA_OYAJI]: null}
+
 enum GAME_STATE {
 	RUNNING, FAILED
 }
@@ -27,6 +31,11 @@ var spawn_latitude: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Create the weighted list of selectable spawn items
+	for spawnable:Droppable in Globals.DROPPABLE_DATA.values():
+		for i in range(spawnable.spawn_rate):
+			drop_select_list.append(spawnable)
+	# Set the parameters of the game to lock spawning in the game area
 	min_x = game_area.position.x
 	max_x = min_x + game_area.size.x
 	# min_x = game_area.left
@@ -60,7 +69,10 @@ func _input(event):
 		call_deferred("_drop_droppable")
 
 func _choose_droppable() -> Droppable:
-	return Globals.DROPPABLE_DATA[Globals.Droppables.MEDAMA_OYAJI]
+	var new_droppable = drop_select_list.pick_random()
+	while !encountered_list.has(new_droppable):
+		new_droppable = drop_select_list.pick_random()
+	return new_droppable
 
 func _add_to_score(points: int):
 	score += points
@@ -73,6 +85,7 @@ func _upgrade(droppable: Droppable, prev_left: Vector2, prev_right: Vector2):
 	new_suika.drop_new.connect(_upgrade)
 	add_child(new_suika)
 	new_suika.position = Vector2(normalized_x, normalized_y)
+	encountered_list[droppable] = null
 	_add_to_score(droppable.combine_points)
 
 func _spawn_droppable():

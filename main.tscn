@@ -13,7 +13,7 @@ size = Vector2(64, 1824)
 size = Vector2(56, 1824)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypnkk"]
-size = Vector2(1344, 1312)
+size = Vector2(1344, 1304)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_rbtj1")
@@ -90,7 +90,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/GameOverDetector"]
-position = Vector2(477, -608)
+position = Vector2(477, -612)
 shape = SubResource("RectangleShape2D_ypnkk")
 
 [node name="Game Over Line" type="ColorRect" parent="GameArea"]
